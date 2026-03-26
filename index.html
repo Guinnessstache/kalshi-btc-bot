@@ -29,16 +29,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-badge{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;color:var(--up);border:1px solid var(--border2);padding:6px 16px;border-radius:20px;margin-bottom:32px;background:rgba(0,229,160,0.06);animation:fadeUp 0.6s ease both}
 .hero h1{font-family:var(--mono);font-size:clamp(36px,6vw,72px);font-weight:700;line-height:1.1;margin-bottom:24px;animation:fadeUp 0.6s 0.1s ease both}
 .hero h1 span{color:var(--up)}
-.hero p{font-size:clamp(15px,2vw,18px);color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:48px;animation:fadeUp 0.6s 0.2s ease both}
+.hero p{font-size:clamp(15px,2vw,18px);color:var(--muted);max-width:580px;line-height:1.7;margin-bottom:48px;animation:fadeUp 0.6s 0.2s ease both}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.6s 0.3s ease both}
 .btn-primary{font-family:var(--mono);font-size:13px;font-weight:700;padding:14px 32px;background:var(--up);color:#000;border:none;border-radius:2px;cursor:pointer;text-decoration:none;letter-spacing:0.08em;transition:all 0.2s}
 .btn-primary:hover{background:#00ffb3;transform:translateY(-1px)}
 .btn-secondary{font-family:var(--mono);font-size:13px;font-weight:600;padding:14px 32px;border:1px solid var(--border2);color:var(--text);border-radius:2px;cursor:pointer;text-decoration:none;letter-spacing:0.08em;transition:all 0.2s;background:transparent}
 .btn-secondary:hover{border-color:var(--up);color:var(--up)}
 .ticker-wrap{position:relative;z-index:1;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);overflow:hidden;padding:12px 0}
-.ticker{display:flex;animation:scroll 35s linear infinite;white-space:nowrap}
+.ticker{display:flex;animation:scroll 45s linear infinite;white-space:nowrap}
 .ticker-item{font-family:var(--mono);font-size:12px;padding:0 40px;display:flex;align-items:center;gap:10px;color:var(--muted)}
 .ticker-item .val{color:var(--up);font-weight:600}
+.ticker-item .val.red{color:var(--down)}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .stats-bar{position:relative;z-index:1;display:flex;justify-content:center;background:var(--bg2);border-bottom:1px solid var(--border)}
 .stat{flex:1;max-width:220px;padding:28px 24px;text-align:center;border-right:1px solid var(--border)}
@@ -51,14 +52,16 @@ section{position:relative;z-index:1;padding:100px 24px}
 .section-title{font-family:var(--mono);font-size:clamp(28px,4vw,44px);font-weight:700;margin-bottom:16px;line-height:1.2}
 .section-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:60px}
 .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
-.feature-card{background:var(--bg2);padding:32px;transition:background 0.2s}
+.feature-card{background:var(--bg2);padding:32px;transition:background 0.2s;position:relative}
 .feature-card:hover{background:var(--bg3)}
 .feature-icon{font-size:28px;margin-bottom:16px}
 .feature-title{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;letter-spacing:0.05em}
 .feature-desc{font-size:14px;color:var(--muted);line-height:1.7}
+.new-badge{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.1em;color:#000;background:var(--up);padding:2px 7px;border-radius:2px;position:absolute;top:16px;right:16px}
 .strategy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.strategy-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:24px;transition:border-color 0.2s}
+.strategy-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:24px;transition:border-color 0.2s;position:relative}
 .strategy-card:hover{border-color:var(--border2)}
+.strategy-card.new-card{border-color:rgba(0,229,160,0.3)}
 .sc-label{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--muted);margin-bottom:6px}
 .sc-val{font-family:var(--mono);font-size:28px;font-weight:700;margin-bottom:8px}
 .sc-desc{font-size:13px;color:var(--muted);line-height:1.6}
@@ -75,13 +78,13 @@ section{position:relative;z-index:1;padding:100px 24px}
 .dp-dot{width:12px;height:12px;border-radius:50%}
 .dp-url{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:12px}
 .dp-inner{display:grid;grid-template-columns:200px 1fr 220px;height:320px}
-.dp-left{border-right:1px solid var(--border);padding:16px;display:flex;flex-direction:column;gap:14px}
+.dp-left{border-right:1px solid var(--border);padding:16px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
 .dp-mid{border-right:1px solid var(--border)}
 .dp-right{padding:12px}
 .dp-section{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px}
 .dp-stat-row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;margin-bottom:5px}
 .dp-stat-row span:last-child{color:var(--up)}
-.dp-price{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--up)}
+.dp-price{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--down)}
 .dp-price-sub{font-family:var(--mono);font-size:10px;color:var(--muted)}
 .dp-log-entry{font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:6px;line-height:1.5}
 .dp-log-entry span{color:var(--up)}
@@ -115,9 +118,9 @@ footer a{color:var(--up);text-decoration:none}
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">WINDOWS · FREE · OPEN SOURCE</div>
+  <div class="hero-badge">WINDOWS · FREE · OPEN SOURCE · v2.0</div>
   <h1>Automate Your<br><span>BTC Predictions</span><br>on Kalshi</h1>
-  <p>A free, standalone Windows app that trades Kalshi's 15-minute Bitcoin prediction markets automatically — with live dashboard, trailing stops, velocity exits, and real-time BTC price chart.</p>
+  <p>A free, standalone Windows app that trades Kalshi's 15-minute Bitcoin prediction markets automatically — YES or NO, with live dashboard, volume filtering, hold-to-expiry mode, and real-time BTC chart.</p>
   <div class="hero-btns">
     <a href="#download" class="btn-primary">↓ FREE DOWNLOAD</a>
     <a href="#features" class="btn-secondary">SEE HOW IT WORKS →</a>
@@ -126,24 +129,28 @@ footer a{color:var(--up);text-decoration:none}
 
 <div class="ticker-wrap">
   <div class="ticker">
-    <div class="ticker-item">YES TRIGGER <span class="val">70¢</span></div>
+    <div class="ticker-item">TRIGGER <span class="val">70¢</span></div>
     <div class="ticker-item">CUSHION <span class="val">12¢</span></div>
     <div class="ticker-item">TRAIL <span class="val">8¢</span></div>
     <div class="ticker-item">VELOCITY EXIT <span class="val">8¢/tick</span></div>
     <div class="ticker-item">STALL EXIT <span class="val">180s</span></div>
     <div class="ticker-item">YES ONLY <span class="val">ON</span></div>
+    <div class="ticker-item">NO ONLY <span class="val red">NEW</span></div>
+    <div class="ticker-item">HOLD TO EXPIRY <span class="val red">NEW</span></div>
+    <div class="ticker-item">MIN VOLUME <span class="val">50K</span></div>
     <div class="ticker-item">SCALE DOWN <span class="val">ON</span></div>
-    <div class="ticker-item">WIN RATE <span class="val">62%</span></div>
     <div class="ticker-item">LIVE BTC CHART <span class="val">✓</span></div>
     <div class="ticker-item">PLATFORM <span class="val">KALSHI</span></div>
-    <div class="ticker-item">YES TRIGGER <span class="val">70¢</span></div>
+    <div class="ticker-item">TRIGGER <span class="val">70¢</span></div>
     <div class="ticker-item">CUSHION <span class="val">12¢</span></div>
     <div class="ticker-item">TRAIL <span class="val">8¢</span></div>
     <div class="ticker-item">VELOCITY EXIT <span class="val">8¢/tick</span></div>
     <div class="ticker-item">STALL EXIT <span class="val">180s</span></div>
     <div class="ticker-item">YES ONLY <span class="val">ON</span></div>
+    <div class="ticker-item">NO ONLY <span class="val red">NEW</span></div>
+    <div class="ticker-item">HOLD TO EXPIRY <span class="val red">NEW</span></div>
+    <div class="ticker-item">MIN VOLUME <span class="val">50K</span></div>
     <div class="ticker-item">SCALE DOWN <span class="val">ON</span></div>
-    <div class="ticker-item">WIN RATE <span class="val">62%</span></div>
     <div class="ticker-item">LIVE BTC CHART <span class="val">✓</span></div>
     <div class="ticker-item">PLATFORM <span class="val">KALSHI</span></div>
   </div>
@@ -151,8 +158,8 @@ footer a{color:var(--up);text-decoration:none}
 
 <div class="stats-bar">
   <div class="stat fade-up"><div class="stat-val">15</div><div class="stat-label">MINUTE WINDOWS</div></div>
-  <div class="stat fade-up"><div class="stat-val">62%</div><div class="stat-label">WIN RATE</div></div>
-  <div class="stat fade-up"><div class="stat-val">5</div><div class="stat-label">EXIT STRATEGIES</div></div>
+  <div class="stat fade-up"><div class="stat-val">2</div><div class="stat-label">TRADE DIRECTIONS</div></div>
+  <div class="stat fade-up"><div class="stat-val">7</div><div class="stat-label">EXIT STRATEGIES</div></div>
   <div class="stat fade-up"><div class="stat-val">100%</div><div class="stat-label">FREE & OPEN SOURCE</div></div>
 </div>
 
@@ -162,13 +169,17 @@ footer a{color:var(--up);text-decoration:none}
     <h2 class="section-title fade-up">Everything You Need to<br>Trade Smarter</h2>
     <p class="section-sub fade-up">Built on Kalshi's official API — fully automated, fully configurable, no cloud required.</p>
     <div class="features-grid fade-up">
-      <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">FULLY AUTOMATED</div><div class="feature-desc">Monitors Kalshi's BTC 15-minute markets continuously. Enters YES positions when price crosses your trigger, manages the trade, and exits automatically.</div></div>
+      <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">FULLY AUTOMATED</div><div class="feature-desc">Monitors Kalshi's BTC 15-minute markets continuously. Enters YES or NO positions when price crosses your trigger, manages the trade, and exits automatically.</div></div>
       <div class="feature-card"><div class="feature-icon">📈</div><div class="feature-title">TRAILING STOP</div><div class="feature-desc">As price rises above entry, the stop-loss trails up — locking in profit automatically. If price reverses, you exit with gains instead of a loss.</div></div>
       <div class="feature-card"><div class="feature-icon">🚀</div><div class="feature-title">VELOCITY EXIT</div><div class="feature-desc">Detects fast crashes before slippage gets worse. If price drops more than X¢ in a single half-second poll, the bot exits immediately.</div></div>
       <div class="feature-card"><div class="feature-icon">⏱</div><div class="feature-title">STALL EXIT</div><div class="feature-desc">If price hasn't moved above your entry after N seconds, the bot cuts the trade early — eliminating the slow bleed before it becomes a big loss.</div></div>
-      <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">LIVE BTC DASHBOARD</div><div class="feature-desc">Real-time BTC/USD candlestick chart, trade history, session P&L, win rate, and live activity log — all in a browser at localhost:5050.</div></div>
+      <div class="feature-card" style="border-color:rgba(0,229,160,0.25)"><div class="new-badge">NEW</div><div class="feature-icon">🔻</div><div class="feature-title">NO ONLY MODE</div><div class="feature-desc">Trade both directions. Switch to NO-only during bearish BTC conditions — the bot enters NO positions when NO price crosses your trigger. Pairs with Hold to Expiry for maximum edge.</div></div>
+      <div class="feature-card" style="border-color:rgba(0,229,160,0.25)"><div class="new-badge">NEW</div><div class="feature-icon">📌</div><div class="feature-title">HOLD TO EXPIRY</div><div class="feature-desc">Disable all stop-losses and let every position ride to window close. Perfect for NO-only mode — prevents premature exits during BTC bounces that ultimately resolve in your favour.</div></div>
+      <div class="feature-card" style="border-color:rgba(0,229,160,0.25)"><div class="new-badge">NEW</div><div class="feature-icon">📊</div><div class="feature-title">VOLUME FILTER</div><div class="feature-desc">Skip thin markets automatically. Set a minimum contract volume threshold — the bot only enters markets with enough liquidity to avoid order book slippage.</div></div>
+      <div class="feature-card"><div class="feature-icon">🖥</div><div class="feature-title">LIVE DASHBOARD</div><div class="feature-desc">Real-time BTC/USD chart, trade history, reconcile tab, session P&L, win rate, and activity log — all in a browser at localhost:5050.</div></div>
       <div class="feature-card"><div class="feature-icon">🔒</div><div class="feature-title">RUNS LOCALLY</div><div class="feature-desc">Everything runs on your Windows PC. No cloud, no subscriptions, no third parties. Your Kalshi API keys never leave your machine.</div></div>
     </div>
+
     <div class="dashboard-preview fade-up">
       <div class="dp-titlebar">
         <div class="dp-dot" style="background:#ff5f57"></div>
@@ -178,26 +189,28 @@ footer a{color:var(--up);text-decoration:none}
       </div>
       <div class="dp-inner">
         <div class="dp-left">
-          <div><div class="dp-section">LIVE PRICES</div><div class="dp-price">83¢</div><div class="dp-price-sub">▲ UP (YES)</div></div>
+          <div><div class="dp-section">LIVE PRICES</div><div class="dp-price">74¢</div><div class="dp-price-sub">▼ DOWN (NO)</div></div>
           <div><div class="dp-section">STRATEGY</div>
             <div class="dp-stat-row"><span>TRIGGER</span><span>70¢</span></div>
             <div class="dp-stat-row"><span>CUSHION</span><span>12¢</span></div>
-            <div class="dp-stat-row"><span>TRAIL</span><span>8¢</span></div>
-            <div class="dp-stat-row"><span>VELOCITY</span><span>8¢/tick</span></div>
-            <div class="dp-stat-row"><span>STALL</span><span>180s</span></div>
+            <div class="dp-stat-row"><span>MIN VOL</span><span>50K</span></div>
           </div>
-          <div><div class="dp-section">SESSION P&L</div><div class="dp-pnl">+$2.39</div></div>
+          <div><div class="dp-section">TRADE SIZE</div>
+            <div class="dp-stat-row"><span>NO ONLY</span><span style="color:var(--down)">ON</span></div>
+            <div class="dp-stat-row"><span>HOLD EXPIRY</span><span style="color:var(--up)">ON</span></div>
+          </div>
+          <div><div class="dp-section">SESSION P&L</div><div class="dp-pnl">+$1.84</div></div>
         </div>
         <div class="dp-mid"><canvas id="mini-chart" style="width:100%;height:100%;display:block"></canvas></div>
         <div class="dp-right">
           <div class="dp-section">ACTIVITY LOG</div>
-          <div class="dp-log-entry"><span>04:14</span> ✅ YES position confirmed</div>
-          <div class="dp-log-entry"><span>04:13</span> 🚀 UP triggered @ 83¢</div>
-          <div class="dp-log-entry"><span>04:12</span> ⏱ Trigger window active</div>
-          <div class="dp-log-entry"><span>03:59</span> 📈 Trail stop → 78¢</div>
-          <div class="dp-log-entry"><span>03:58</span> ✅ YES position confirmed</div>
-          <div class="dp-log-entry"><span>03:44</span> Waiting for session...</div>
-          <div class="dp-log-entry"><span>03:30</span> ✅ Trade closed +$0.48</div>
+          <div class="dp-log-entry"><span>14:15</span> ✅ Trade closed +$0.66</div>
+          <div class="dp-log-entry"><span>14:14</span> ⏰ Window closing — resolving</div>
+          <div class="dp-log-entry"><span>14:03</span> 📌 Hold to expiry — ignoring stop @ 58¢</div>
+          <div class="dp-log-entry"><span>14:02</span> 🚀 DOWN signal @ 74¢ — NO entered</div>
+          <div class="dp-log-entry"><span>13:59</span> ⏭ Low volume skipped (23K &lt; 50K)</div>
+          <div class="dp-log-entry"><span>13:45</span> ✅ Trade closed +$0.54</div>
+          <div class="dp-log-entry"><span>13:30</span> Waiting for session...</div>
         </div>
       </div>
     </div>
@@ -210,11 +223,14 @@ footer a{color:var(--up);text-decoration:none}
     <h2 class="section-title fade-up">Data-Driven Defaults,<br>Fully Configurable</h2>
     <p class="section-sub fade-up">Every setting is tuned from real trade data. Change anything live from the dashboard — no restart needed.</p>
     <div class="strategy-grid fade-up">
-      <div class="strategy-card"><div class="sc-label">TRIGGER PRICE</div><div class="sc-val" style="color:var(--up)">70¢</div><div class="sc-desc">Enter when Kalshi YES price crosses this. Lower = more trades, higher = stronger signal.</div></div>
-      <div class="strategy-card"><div class="sc-label">STOP CUSHION</div><div class="sc-val" style="color:var(--down)">12¢</div><div class="sc-desc">Stop-loss at entry − 12¢. Dynamic — adjusts automatically for every entry price.</div></div>
-      <div class="strategy-card"><div class="sc-label">TRAIL DISTANCE</div><div class="sc-val" style="color:var(--up)">8¢</div><div class="sc-desc">Once price rises 8¢ above entry the stop trails up, locking in profit as the trade moves.</div></div>
+      <div class="strategy-card"><div class="sc-label">TRIGGER PRICE</div><div class="sc-val" style="color:var(--up)">70¢</div><div class="sc-desc">Enter when the active side's price crosses this. Lower = more trades, higher = stronger signal.</div></div>
+      <div class="strategy-card"><div class="sc-label">STOP CUSHION</div><div class="sc-val" style="color:var(--down)">12¢</div><div class="sc-desc">Stop-loss at entry − 12¢. Disabled automatically when Hold to Expiry is on.</div></div>
+      <div class="strategy-card"><div class="sc-label">TRAIL DISTANCE</div><div class="sc-val" style="color:var(--up)">8¢</div><div class="sc-desc">Once price rises above entry the stop trails up, locking in profit as the trade moves.</div></div>
       <div class="strategy-card"><div class="sc-label">VELOCITY EXIT</div><div class="sc-val" style="color:var(--down)">8¢</div><div class="sc-desc">Exit instantly if price drops 8¢+ in one half-second poll — catches fast crashes early.</div></div>
       <div class="strategy-card"><div class="sc-label">STALL EXIT</div><div class="sc-val" style="color:var(--warn)">180s</div><div class="sc-desc">Cut a trade that hasn't moved above entry after 3 minutes. Stops slow bleeds.</div></div>
+      <div class="strategy-card new-card"><div class="new-badge">NEW</div><div class="sc-label">MIN VOLUME</div><div class="sc-val" style="color:var(--up)">50K</div><div class="sc-desc">Skip markets with fewer than 50,000 contracts traded. Prevents order book slippage.</div></div>
+      <div class="strategy-card new-card"><div class="new-badge">NEW</div><div class="sc-label">NO ONLY</div><div class="sc-val" style="color:var(--down)">OFF</div><div class="sc-desc">Trade NO/DOWN positions only. Ideal for bearish BTC conditions. Mutually exclusive with YES only.</div></div>
+      <div class="strategy-card new-card"><div class="new-badge">NEW</div><div class="sc-label">HOLD TO EXPIRY</div><div class="sc-val" style="color:var(--up)">OFF</div><div class="sc-desc">Hold every position to window close. Disables all stops. Best combined with NO only mode.</div></div>
       <div class="strategy-card"><div class="sc-label">SCALE DOWN</div><div class="sc-val" style="color:var(--warn)">ON</div><div class="sc-desc">Halves trade size after a stop-loss. Restores on next win. Protects during losing streaks.</div></div>
     </div>
   </div>
@@ -226,10 +242,10 @@ footer a{color:var(--up);text-decoration:none}
     <h2 class="section-title fade-up">Up and Running<br>in 4 Steps</h2>
     <p class="section-sub fade-up">No admin rights required. The build script handles Python automatically.</p>
     <div class="steps fade-up">
-      <div class="step"><div class="step-num">01</div><div><div class="step-title">DOWNLOAD & EXTRACT</div><div class="step-desc">Grab the ZIP from this page and extract it to any folder on your Windows PC. Run it from anywhere — no installation, no admin rights needed.</div><div class="step-code">KalshiBTCBot.zip → extract anywhere</div></div></div>
-      <div class="step"><div class="step-num">02</div><div><div class="step-title">BUILD THE EXE</div><div class="step-desc">Double-click build_windows.bat. It installs Python dependencies and compiles a standalone KalshiBot.exe. Takes about 60 seconds.</div><div class="step-code">build_windows.bat → dist/KalshiBot.exe</div></div></div>
-      <div class="step"><div class="step-num">03</div><div><div class="step-title">ENTER YOUR API KEY</div><div class="step-desc">Launch KalshiBot.exe. Enter your Kalshi API Key ID and browse to your private key file. Find these at kalshi.com → Settings → API. Paper mode lets you test without real money.</div><div class="step-code">kalshi.com → Settings → API → Generate Key</div></div></div>
-      <div class="step"><div class="step-num">04</div><div><div class="step-title">WATCH IT TRADE</div><div class="step-desc">The dashboard opens automatically. Monitor live BTC/USD price, session P&L, trade history, and the activity log — all in real time.</div><div class="step-code">http://localhost:5050</div></div></div>
+      <div class="step"><div class="step-num">01</div><div><div class="step-title">DOWNLOAD & EXTRACT</div><div class="step-desc">Grab the ZIP from this page and extract it to any folder on your Windows PC. Inside you'll find all source files and <strong>build_windows.bat</strong> to compile the app.</div><div class="step-code">KalshiBTCBot.zip → extract all files</div></div></div>
+      <div class="step"><div class="step-num">02</div><div><div class="step-title">BUILD THE EXE</div><div class="step-desc">Double-click <strong>build_windows.bat</strong>. It installs Python if needed, bundles everything, and outputs <strong>dist\KalshiBot.exe</strong> — a fully standalone app with no dependencies.</div><div class="step-code">build_windows.bat → dist\KalshiBot.exe</div></div></div>
+      <div class="step"><div class="step-num">03</div><div><div class="step-title">CONFIGURE & LAUNCH</div><div class="step-desc">Run <strong>KalshiBot.exe</strong>. The setup window opens — choose Live or Paper mode, enter your Kalshi API key, set your trade size, and pick your trading direction (YES only, NO only, or both).</div><div class="step-code">kalshi.com → Settings → API → Generate Key</div></div></div>
+      <div class="step"><div class="step-num">04</div><div><div class="step-title">WATCH IT TRADE</div><div class="step-desc">The dashboard opens automatically in your browser. Monitor live BTC/USD price, session P&L, trade history, reconcile tab, and the activity log — all in real time.</div><div class="step-code">http://localhost:5050</div></div></div>
     </div>
   </div>
 </section>
@@ -238,21 +254,22 @@ footer a{color:var(--up);text-decoration:none}
   <div class="section-inner">
     <div class="download-box fade-up">
       <div class="dl-title">⬡ GET KALSHI BTC BOT</div>
-      <p class="dl-sub">Free forever. No account. No telemetry. Just unzip and build.</p>
-      <a href="KalshiBTCBot.zip" download="KalshiBTCBot.zip" class="btn-primary" style="font-size:14px;padding:16px 40px">↓ DOWNLOAD ZIP</a>
+      <p class="dl-sub">Free forever. No Python needed to run. Just build once and run KalshiBot.exe.</p>
+      <a href="KalshiBTCBot.zip" download="KalshiBTCBot.zip" class="btn-primary" style="font-size:14px;padding:16px 40px">↓ DOWNLOAD ZIP  v2.0</a>
       <div class="dl-reqs">
         <div class="dl-req">Windows 10 / 11 (64-bit)</div>
         <div class="dl-req">Kalshi account required</div>
-        <div class="dl-req">Python auto-installed</div>
+        <div class="dl-req">No Python needed to run</div>
         <div class="dl-req">No admin rights needed</div>
         <div class="dl-req">100% free & open source</div>
+        <div class="dl-req">YES + NO trading modes</div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>KALSHI BTC BOT · Unofficial. Not affiliated with Kalshi Inc. · <a href="https://github.com/guinnessstache/kalshi-btc-bot">GitHub</a> · Trade at your own risk.</p>
+  <p>KALSHI BTC BOT v2.0 · Unofficial. Not affiliated with Kalshi Inc. · <a href="https://github.com/guinnessstache/kalshi-btc-bot">GitHub</a> · Trade at your own risk.</p>
 </footer>
 
 <script>
@@ -263,10 +280,9 @@ function drawStars(t){ctx.clearRect(0,0,canvas.width,canvas.height);for(const s 
 function tick(t){drawStars(t);requestAnimationFrame(tick)}
 window.addEventListener('resize',()=>{resize();initStars()});resize();initStars();requestAnimationFrame(tick);
 
-// Mini chart
 const mc=document.getElementById('mini-chart'),mctx=mc.getContext('2d');
 let prices=[],base=70500;
-function gp(){base+=(Math.random()-0.48)*80;base=Math.max(69500,Math.min(71500,base));return base}
+function gp(){base+=(Math.random()-0.52)*80;base=Math.max(69500,Math.min(71500,base));return base}
 for(let i=0;i<60;i++)prices.push(gp());
 function drawChart(){
   const W=mc.parentElement.clientWidth,H=mc.parentElement.clientHeight;
@@ -275,12 +291,12 @@ function drawChart(){
   const min=Math.min(...prices)-200,max=Math.max(...prices)+200,range=max-min;
   const toX=i=>pad.l+(i/(prices.length-1))*gW,toY=v=>pad.t+gH-((v-min)/range)*gH;
   mctx.clearRect(0,0,W,H);
-  for(let i=0;i<=4;i++){const v=min+(range/4)*(4-i),y=pad.t+(gH/4)*i;mctx.strokeStyle='rgba(0,229,160,0.07)';mctx.lineWidth=0.5;mctx.beginPath();mctx.moveTo(pad.l,y);mctx.lineTo(W-pad.r,y);mctx.stroke();mctx.fillStyle='#2a4050';mctx.font='9px JetBrains Mono';mctx.textAlign='left';mctx.fillText('$'+Math.round(v).toLocaleString(),W-pad.r+4,y+3)}
-  const g=mctx.createLinearGradient(0,pad.t,0,pad.t+gH);g.addColorStop(0,'rgba(0,229,160,0.15)');g.addColorStop(1,'rgba(0,229,160,0)');
+  for(let i=0;i<=4;i++){const v=min+(range/4)*(4-i),y=pad.t+(gH/4)*i;mctx.strokeStyle='rgba(255,68,102,0.07)';mctx.lineWidth=0.5;mctx.beginPath();mctx.moveTo(pad.l,y);mctx.lineTo(W-pad.r,y);mctx.stroke();mctx.fillStyle='#2a4050';mctx.font='9px JetBrains Mono';mctx.textAlign='left';mctx.fillText('$'+Math.round(v).toLocaleString(),W-pad.r+4,y+3)}
+  const g=mctx.createLinearGradient(0,pad.t,0,pad.t+gH);g.addColorStop(0,'rgba(255,68,102,0.15)');g.addColorStop(1,'rgba(255,68,102,0)');
   mctx.beginPath();mctx.moveTo(toX(0),pad.t+gH);prices.forEach((p,i)=>mctx.lineTo(toX(i),toY(p)));mctx.lineTo(toX(prices.length-1),pad.t+gH);mctx.closePath();mctx.fillStyle=g;mctx.fill();
-  mctx.beginPath();prices.forEach((p,i)=>i===0?mctx.moveTo(toX(i),toY(p)):mctx.lineTo(toX(i),toY(p)));mctx.strokeStyle='#00e5a0';mctx.lineWidth=1.5;mctx.stroke();
+  mctx.beginPath();prices.forEach((p,i)=>i===0?mctx.moveTo(toX(i),toY(p)):mctx.lineTo(toX(i),toY(p)));mctx.strokeStyle='#ff4466';mctx.lineWidth=1.5;mctx.stroke();
   const lp=prices[prices.length-1],lx=toX(prices.length-1),ly=toY(lp);
-  mctx.fillStyle='#00e5a0';mctx.fillRect(lx+2,ly-8,58,16);mctx.fillStyle='#000';mctx.font='9px JetBrains Mono';mctx.textAlign='left';mctx.fillText('$'+Math.round(lp).toLocaleString(),lx+5,ly+4);
+  mctx.fillStyle='#ff4466';mctx.fillRect(lx+2,ly-8,58,16);mctx.fillStyle='#fff';mctx.font='9px JetBrains Mono';mctx.textAlign='left';mctx.fillText('$'+Math.round(lp).toLocaleString(),lx+5,ly+4);
 }
 setInterval(()=>{prices.push(gp());if(prices.length>80)prices.shift();drawChart()},1000);
 drawChart();
